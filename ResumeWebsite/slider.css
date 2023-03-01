@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --BACKGROUND-COLOR: #021528;
+    --COLOR-WHITE-FONT: #fff;
+    --COLOR-RED-FONT: #cc4747;
+    --FONT-SIZE-PARAGRAPH: clamp(10px, 20vh, 20px);
+
+    --TRANSITION-HOVER: 200ms;
+}
+
+:is(a:link, a:visited) {
+    list-style-type: lower-greek;
+    color: var(--COLOR-WHITE-FONT);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--COLOR-RED-FONT);
+    text-decoration: underline;
+
+    /* animation */
+    transition-duration: var(--TRANSITION-HOVER);
+    transition-timing-function: ease-in;
+}
+
+/* sidebar container */
+.sidebar {
+    background-color: var(--BACKGROUND-COLOR);
+    color: var(--COLOR-WHITE-FONT);
+    height: 100vh;
+    width: 20%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    gap: 2rem;
+
+    padding: 2rem;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    transform: translateX(-100%);
+
+    overflow-y: scroll;
+
+    /* display: none; */
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+/* sidebar animation */
+.sidebar.active {
+    animation-name: slideRight;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.sidebar.inactive {
+    animation-name: slideLeft;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* sidebar page */
+.sidebar_page_link>ul {
+    list-style-type: none;
+}
+
+.sidebar_page_link>ul>li {
+    margin-bottom: clamp(10px, 5vh, 16px);
+    font-size: var(--FONT-SIZE-PARAGRAPH);
+}
+
+/* end of sidebar page */
+
+
+/* sidebar social */
+.sidebar__social_link>ul {
+    list-style-type: none;
+
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.sidebar__social_link>ul>li {
+    margin-right: var(--FONT-SIZE-PARAGRAPH);
+}
+
+.sidebar__social_link_icon {
+    width: 30px;
+    object-fit: contain;
+}
+
+.sidebar__social_link_icon:hover {
+    scale: 1.1;
+
+    /* animation */
+    transition-duration: var(--TRANSITION-HOVER);
+    transition-timing-function: ease-in;
+}
+
+/* end of sidebar social */
+
+
+/* hamburger menu */
+.hamburger_menu {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    height: auto;
+}
+
+.hamburger_menu_relative {
+    position: relative;
+    height: auto;
+}
+
+.hamburger_menu__button,
+.hamburger_menu__button::before,
+.hamburger_menu__button::after {
+    background-color: var(--BACKGROUND-COLOR);
+    width: 30px;
+    height: 7px;
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    cursor: pointer;
+
+    transition-property: all;
+    transition-duration: .2s;
+}
+
+.hamburger_menu__button::before,
+.hamburger_menu__button::after {
+    content: '';
+}
+
+.hamburger_menu__button::before {
+    transform: translate(-15px, -15px);
+}
+
+.hamburger_menu__button::after {
+    transform: translate(-15px, 8px);
+}
+
+/* .hamburger_menu__button animation */
+.hamburger_menu__button.active {
+    background-color: transparent;
+    transform: rotate(180deg);
+}
+
+.hamburger_menu__button.active::before {
+    transform: translate(-15px, 0px) rotate(50deg);
+}
+
+.hamburger_menu__button.active::after {
+    transform: translate(-15px, 0px) rotate(130deg);
+}
+
+/* EXTRA SMALL SCREEN */
+@media screen and (max-width: 481px) {
+    .sidebar {
+        width: 70vw;
+    }
+}
+
+/* SMALL SCREEN */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .sidebar {
+        width: 50vw;
+    }
+}
+
+/* MEDIUM SCREEN */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .hamburger_menu {
+        display: none;
+    }
+
+    .sidebar {
+        transform: translateX(0);
+        width: 25vw;
+    }
+}
+
+/* LARGE SCREEN */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .hamburger_menu {
+        display: none;
+    }
+
+    .sidebar {
+        transform: translateX(0);
+        width: 25vw;
+    }
+}
+
+/* EXTRA LARGE SCREEN */
+@media screen and (min-width: 1201px) {
+    .hamburger_menu {
+        display: none;
+    }
+
+    .sidebar {
+        transform: translateX(0);
+        width: 25vw;
+    }
+}
+
+/* MOBILE DEVICE LANDSCAPE */
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {}
