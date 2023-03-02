@@ -77,6 +77,7 @@ main {
     cursor: pointer;
 }
 
+/* hover */
 .submit:hover {
     transition: all;
     transition-duration: .2s;
