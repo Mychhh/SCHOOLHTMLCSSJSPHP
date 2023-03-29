@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Layout A */
+.grid {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.grid__child {
+    border: 2px dashed rgb(201, 50, 101);
+    display: grid;
+    place-items: center;
+}
+
+img {
+    max-width: 300px;
+    object-fit: contain;
+}
+
+.grid__header {
+    grid-column: span 2;
+}
+
+.grid__navigation {
+    grid-column: span 2;
+}
+
+.grid__section {
+    grid-row: span 2;
+    padding: 2em;
+}
+
+.grid__article {
+    grid-row: span 2;
+    padding: 2em;
+}
+
+.grid__footer {
+    grid-column: span 2;
+}
+
+/* Layout B */
+
+.grid_b {
+    margin-top: 5rem;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1em;
+}
+
+.grid_b__child {
+    border: 2px dashed rgb(50, 58, 201);
+    display: grid;
+    place-items: center;
+}
+
+img {
+    max-width: 300px;
+    object-fit: contain;
+}
+
+.grid_b__header {
+    grid-column: span 5;
+}
+
+.grid_b__navigation {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.grid_b__section {
+    grid-column: span 2;
+    grid-row: span 2;
+    padding: 2em;
+}
+
+.grid_b__article {
+    grid-column: span 2;
+    grid-row: span 2;
+    padding: 2em;
+}
+
+.grid_b__footer {
+    grid-column: span 5;
+}

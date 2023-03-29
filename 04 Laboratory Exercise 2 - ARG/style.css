@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.center {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    background-color: #847160;
+}
+
+.content {
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 2em
+}
+
+img {
+    width: 150px;
+    object-fit: contain;
+}
+
+.artwork {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    column-gap: 0.25em;
+    border: 4mm ridge #CD9868;
+    background-color: #CD9868;
+}
+
+.artwork_1 {
+    column-span: 1;
+
+    animation-name: artwork1Animate;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+.artwork_2 {
+    column-span: 1;
+
+    animation-name: artwork2Animate;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+.artwork_3 {
+    column-span: 1;
+
+    animation-name: artwork3Animate;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+.artwork_4 {
+    column-span: 1;
+
+    animation-name: artwork4Animate;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+.artwork_5 {
+    column-span: 1;
+
+    animation-name: artwork5Animate;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+.artwork_6 {
+    column-span: 1;
+
+    animation-name: artwork6Animate;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+.intro_artist {
+    max-width: 700px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    border-left: 2px solid #CD9868;
+    padding-left: 2em;
+    color: #f49841;
+}
+
+video {
+    max-width: 300px;
+    object-fit: contain;
+}
+
+
+@keyframes artwork1Animate {
+    from {
+        transform: translateX(-100%) translateY(-100%);
+    }
+
+    to {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes artwork2Animate {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes artwork3Animate {
+    from {
+        transform: translateX(100%) translateY(-100%);
+    }
+
+    to {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes artwork4Animate {
+    from {
+        transform: translateX(-100%) translateY(100%);
+    }
+
+    to {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes artwork5Animate {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes artwork6Animate {
+    from {
+        transform: translateX(100%) translateY(100%);
+    }
+
+    to {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+.intro_artist__color_white {
+    color: aliceblue;
+    font-size: 1.125rem;
+}
+
+@media screen and (max-width: 1045px) {
+    .content {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .intro_artist {
+        height: auto;
+        margin: 1rem 0;
+        padding-left: 1em;
+        font-size: 0.75rem;
+    }
+
+    .intro_artist__color_white {
+        color: aliceblue;
+        font-size: 0.65rem;
+    }
+
+    .intro_artist_important_text {
+        margin: 0.25rem 0;
+    }
+
+    img {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .artwork {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 0.25em;
+        margin: 1rem 0;
+    }
+}

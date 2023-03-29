@@ -1,0 +1,12 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+
+    gap: 1em;
+}
+
+.grid__child {
+    border: 3px dashed rgb(190, 76, 95);
+    display: grid;
+    place-items: center;
+}

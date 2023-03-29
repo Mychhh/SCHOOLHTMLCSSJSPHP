@@ -1,0 +1,32 @@
+body {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    background-color: rgb(215, 250, 225);
+    font-family: 'Lucida Sans', 'Lierio', 'Barzaga';
+}
+
+table {
+    background-color: #304355;
+    padding: 10px;
+    font-size: 22px;
+}
+
+tr th {
+    border: 3px solid rgba(224, 24, 24, 0.841);
+    width: 200px;
+    padding: 20px;
+    margin: 5px;
+
+}
+
+td {
+    border-top: 3px solid green;
+    border-right: 3px solid gray;
+    border-bottom: 3px solid violet;
+    border-left: 3px solid gray;
+    width: 200px;
+    padding: 20px;
+    margin: 5px;
+    color: red;
+}
